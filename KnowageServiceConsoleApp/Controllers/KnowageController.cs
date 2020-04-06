@@ -65,7 +65,7 @@ namespace KnowageServiceConsoleApp.Controllers
             else if (result.Message == Result.EXCEPTION)
             {
                 string logMessage = string.Concat("Excption occured:", MethodBase.GetCurrentMethod(), " - " ,result.ObjectException);
-                _logger.LogError(logMessage), 
+                _logger.LogError(logMessage);
             }
         }
 
@@ -84,7 +84,7 @@ namespace KnowageServiceConsoleApp.Controllers
             else if (result.Message == Result.EXCEPTION)
             {
                 string logMessage = string.Concat("Excption occured:", MethodBase.GetCurrentMethod(), " - ", result.ObjectException);
-                _logger.LogError(logMessage), 
+                _logger.LogError(logMessage);
             }
         }
 
