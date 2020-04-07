@@ -35,10 +35,10 @@ namespace KnowageServiceConsoleApp.Controllers
             string parameter4 = "value4";
             string parameter5 = "value5";
             string documentParameter = "";
-            
+            documentParameter = JsonConvert.SerializeObject(document);
+
             GetDocumentParameter(bll, result, DocumentLabel);
             SetDocumentParameter(document, bll, DocumentParameters, parameter1, parameter2);
-            documentParameter = JsonConvert.SerializeObject(document);
             GetDocumentContent(bll, result, DocumentLabel, documentParameter);
 
             string htmlString = result.Response.Content.ToString();
@@ -84,7 +84,7 @@ namespace KnowageServiceConsoleApp.Controllers
             else if (result.Message == Result.EXCEPTION)
             {
                 string logMessage = string.Concat("Excption occured:", MethodBase.GetCurrentMethod(), " - ", result.ObjectException);
-                _logger.LogError(logMessage); 
+                _logger.LogError(logMessage);
             }
         }
 

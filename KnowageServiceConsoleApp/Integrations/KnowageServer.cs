@@ -21,7 +21,7 @@ namespace KnowageService.Integrations
             IRestResponse response;
             try
             {
-                var client = new RestClient(String.Concat(URLs.KnowageURL, "/restful-services/2.0/documents/", DocumentLabel, "1", "/parameters"));
+                var client = new RestClient(String.Concat(URLs.KnowageURL, "/restful-services/2.0/documents/", DocumentLabel, "/parameters"));
                 client.Authenticator = new HttpBasicAuthenticator(KnowageHeaders.UserName, KnowageHeaders.Password);
 
                 var request = new RestRequest(Method.GET);
@@ -67,7 +67,7 @@ namespace KnowageService.Integrations
             IRestResponse response;
             try
             {
-                var client = new RestClient(String.Concat(URLs.KnowageURL, "/restful-services/2.0/documents/", DocumentLabel,"1", "/content"));
+                var client = new RestClient(String.Concat(URLs.KnowageURL, "/restful-services/2.0/documents/", DocumentLabel, "/content"));
                 client.Authenticator = new HttpBasicAuthenticator(KnowageHeaders.UserName, KnowageHeaders.Password);
 
                 var request = new RestRequest(Method.POST);
